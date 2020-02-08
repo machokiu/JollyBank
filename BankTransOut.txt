@@ -1,0 +1,1883 @@
+Thu Dec  5 04:25:16 PST 2019
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+11745 warnings generated.
+23466 warnings generated.
+37700 warnings generated.
+49448 warnings generated.
+63533 warnings generated.
+74067 warnings generated.
+/home/NETID/machokiu/ass5/account.cpp:8:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "fund.h"
+/home/NETID/machokiu/ass5/account.cpp:14:30: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+ostream& operator<<(ostream& out, Account& account){
+                             ^~~~
+                             Out
+/home/NETID/machokiu/ass5/account.cpp:14:44: warning: invalid case style for parameter 'account' [readability-identifier-naming]
+ostream& operator<<(ostream& out, Account& account){
+                                           ^~~~~~~~
+                                           Account
+/home/NETID/machokiu/ass5/account.cpp:24:1: warning: constructor does not initialize these fields: fundID [cppcoreguidelines-pro-type-member-init]
+Account::Account(string firstName, string lastName, int accountID) : 
+^
+/home/NETID/machokiu/ass5/account.cpp:24:25: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+Account::Account(string firstName, string lastName, int accountID) : 
+                        ^~~~~~~~~~
+                        FirstName
+/home/NETID/machokiu/ass5/account.cpp:24:43: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+Account::Account(string firstName, string lastName, int accountID) : 
+                                          ^~~~~~~~~
+                                          LastName
+/home/NETID/machokiu/ass5/account.cpp:24:57: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+Account::Account(string firstName, string lastName, int accountID) : 
+                                                        ^~~~~~~~~~
+                                                        AccountId
+/home/NETID/machokiu/ass5/account.cpp:25:13: warning: parameter 'firstName' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        firstName{ firstName }, lastName{ lastName }, accountID{accountID} {
+                   ^~~~~~~~~
+                   std::move()
+/home/NETID/machokiu/ass5/account.cpp:25:36: warning: parameter 'lastName' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        firstName{ firstName }, lastName{ lastName }, accountID{accountID} {
+                                          ^~~~~~~~
+                                          std::move()
+/home/NETID/machokiu/ass5/account.cpp:26:9: warning: invalid case style for variable 'fundNames' [readability-identifier-naming]
+        string fundNames[] = { "Money Market", "Prime Money Market","Long-Term Bond",
+               ^~~~~~~~~~
+               FundNames
+/home/NETID/machokiu/ass5/account.cpp:35:10: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Account::~Account(){
+         ^         ~
+                   = default;
+/home/NETID/machokiu/ass5/account.cpp:44:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+void Account::setFundID(int fundID) {
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.cpp:50:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+int Account::getBalance(int fundID)const {
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.cpp:55:33: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+string Account::getFundName(int fundID) {
+                                ^~~~~~~
+                                FundId
+/home/NETID/machokiu/ass5/account.cpp:70:32: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+void Account::addToAccount(int fundID, int amount){
+                               ^~~~~~~
+                               FundId
+/home/NETID/machokiu/ass5/account.cpp:70:44: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+void Account::addToAccount(int fundID, int amount){
+                                           ^~~~~~~
+                                           Amount
+/home/NETID/machokiu/ass5/account.cpp:76:40: warning: invalid case style for parameter 'pFund' [readability-identifier-naming]
+void Account::widthFromSimilarAcct(int pFund, int sFund, int amount){
+                                       ^~~~~~
+                                       PFund
+/home/NETID/machokiu/ass5/account.cpp:76:51: warning: invalid case style for parameter 'sFund' [readability-identifier-naming]
+void Account::widthFromSimilarAcct(int pFund, int sFund, int amount){
+                                                  ^~~~~~
+                                                  SFund
+/home/NETID/machokiu/ass5/account.cpp:76:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+void Account::widthFromSimilarAcct(int pFund, int sFund, int amount){
+                                                             ^~~~~~~
+                                                             Amount
+/home/NETID/machokiu/ass5/account.cpp:78:7: warning: invalid case style for variable 'balAvailable' [readability-identifier-naming]
+                int balAvailable = arrayFund[pFund].getBalance();
+                    ^~~~~~~~~~~~
+                    BalAvailable
+/home/NETID/machokiu/ass5/account.cpp:80:15: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+                Transaction addToHistory('W',"","","", getAccountID(), pFund, 0, 0, balAvailable);
+                            ^~~~~~~~~~~~~
+                            AddToHistory
+/home/NETID/machokiu/ass5/account.cpp:84:15: warning: invalid case style for variable 'addToHistory2' [readability-identifier-naming]
+                Transaction addToHistory2('W', "", "", "", getAccountID(), sFund, 0, 0, amount);
+                            ^~~~~~~~~~~~~~
+                            AddToHistory2
+/home/NETID/machokiu/ass5/account.cpp:88:7: warning: invalid case style for variable 'balAvailable' [readability-identifier-naming]
+                int balAvailable = arrayFund[pFund].getBalance();
+                    ^~~~~~~~~~~~
+                    BalAvailable
+/home/NETID/machokiu/ass5/account.cpp:91:16: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+                        Transaction addToHistory('W', "", "", "", getAccountID(), pFund, 0, 0, balAvailable);
+                                    ^~~~~~~~~~~~~
+                                    AddToHistory
+/home/NETID/machokiu/ass5/account.cpp:98:16: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+                        Transaction addToHistory('W', "", "", "", getAccountID(), sFund, 0, 0, amount);
+                                    ^~~~~~~~~~~~~
+                                    AddToHistory
+/home/NETID/machokiu/ass5/account.cpp:104:16: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+                        Transaction addToHistory('W',"","","Failed",getAccountID(), sFund, 0, 0, amount);
+                                    ^~~~~~~~~~~~~
+                                    AddToHistory
+/home/NETID/machokiu/ass5/account.cpp:111:30: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+bool Account::minusFunds(int fundID, int amount, Transaction frontTrans){
+                             ^~~~~~~
+                             FundId
+/home/NETID/machokiu/ass5/account.cpp:111:42: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+bool Account::minusFunds(int fundID, int amount, Transaction frontTrans){
+                                         ^~~~~~~
+                                         Amount
+/home/NETID/machokiu/ass5/account.cpp:111:62: warning: invalid case style for parameter 'frontTrans' [readability-identifier-naming]
+bool Account::minusFunds(int fundID, int amount, Transaction frontTrans){
+                                                             ^~~~~~~~~~~
+                                                             FrontTrans
+/home/NETID/machokiu/ass5/account.cpp:111:62: warning: the parameter 'frontTrans' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+bool Account::minusFunds(int fundID, int amount, Transaction frontTrans){
+                                                 ~~~~~~~~~~~ ^
+                                                 const &
+/home/NETID/machokiu/ass5/account.cpp:119:4: warning: do not use 'else' after 'return' [readability-else-after-return]
+                        else if (((arrayFund[0].getBalance() + arrayFund[1].getBalance()) >= amount)){
+                        ^~~~~~~~
+/home/NETID/machokiu/ass5/account.cpp:145:4: warning: do not use 'else' after 'return' [readability-else-after-return]
+                        else if (((arrayFund[2].getBalance() + arrayFund[3].getBalance()) >= amount)){
+                        ^~~~~~~~
+/home/NETID/machokiu/ass5/account.cpp:167:2: warning: do not use 'else' after 'return' [readability-else-after-return]
+        else{
+        ^~~~~
+/home/NETID/machokiu/ass5/account.cpp:173:3: warning: do not use 'else' after 'return' [readability-else-after-return]
+                else{
+                ^~~~~
+/home/NETID/machokiu/ass5/account.cpp:181:25: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/account.cpp:181:40: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                                       ^~~~~~~~~~
+                                       FirstName
+/home/NETID/machokiu/ass5/account.cpp:181:40: warning: the parameter 'firstName' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                                ~~~~~~ ^
+                                const &
+/home/NETID/machokiu/ass5/account.cpp:181:58: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                                                         ^~~~~~~~~
+                                                         LastName
+/home/NETID/machokiu/ass5/account.cpp:181:58: warning: the parameter 'lastName' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                                                  ~~~~~~ ^
+                                                  const &
+/home/NETID/machokiu/ass5/account.cpp:181:72: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+void Account::error(int amount, string firstName, string lastName, int fundID){
+                                                                       ^~~~~~~
+                                                                       FundId
+/home/NETID/machokiu/ass5/account.cpp:185:14: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+        Transaction addToHistory('W', "","", "Failed", getAccountID(), fundID, 0, 0, amount);
+                    ^~~~~~~~~~~~~
+                    AddToHistory
+/home/NETID/machokiu/ass5/account.cpp:191:39: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+void Account::recordTrans(Transaction trans, int fundID){
+                                      ^~~~~~
+                                      Trans
+/home/NETID/machokiu/ass5/account.cpp:191:39: warning: the parameter 'trans' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Account::recordTrans(Transaction trans, int fundID){
+                          ~~~~~~~~~~~ ^
+                          const &
+/home/NETID/machokiu/ass5/account.cpp:191:50: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+void Account::recordTrans(Transaction trans, int fundID){
+                                                 ^~~~~~~
+                                                 FundId
+/home/NETID/machokiu/ass5/account.cpp:198:2: warning: use range-based for loop instead [modernize-loop-convert]
+        for (int I = 0; I < 10; ++I)
+        ^   ~~~~~~~~~~~~~~~~~~~~~~~~
+            (auto & I : arrayFund)
+/home/NETID/machokiu/ass5/account.cpp:203:36: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+void Account::printFundHistory(int fundID){
+                                   ^~~~~~~
+                                   FundId
+/home/NETID/machokiu/ass5/account.h:10:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "fund.h"
+/home/NETID/machokiu/ass5/account.h:21:18: warning: function 'operator<<' has a definition with different parameter names [readability-inconsistent-declaration-parameter-name]
+        friend ostream& operator << (ostream& out, Account& acct);
+                        ^
+/home/NETID/machokiu/ass5/account.cpp:14:10: note: the definition seen here
+ostream& operator<<(ostream& out, Account& account){
+         ^
+/home/NETID/machokiu/ass5/account.h:21:18: note: differing parameters are named here: ('acct'), in definition: ('account')
+        friend ostream& operator << (ostream& out, Account& acct);
+                        ^
+note: this fix will not be applied because it overlaps with another fix
+/home/NETID/machokiu/ass5/account.h:21:40: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                              ^~~~
+                                              Out
+/home/NETID/machokiu/ass5/account.h:21:54: warning: invalid case style for parameter 'acct' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                                            ^
+note: this fix will not be applied because it overlaps with another fix
+/home/NETID/machokiu/ass5/account.h:21:54: warning: non-const reference parameter 'acct', make it const or use a pointer [google-runtime-references]
+/home/NETID/machokiu/ass5/account.h:25:18: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                        ^~~~~~~~~~
+                        FirstName
+/home/NETID/machokiu/ass5/account.h:25:36: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                          ^~~~~~~~~
+                                          LastName
+/home/NETID/machokiu/ass5/account.h:25:50: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                                        ^~~~~~~~~~
+                                                        AccountId
+/home/NETID/machokiu/ass5/account.h:30:25: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                               ^~~~~~~
+                               FundId
+/home/NETID/machokiu/ass5/account.h:30:37: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                                           ^~~~~~~
+                                           Amount
+/home/NETID/machokiu/ass5/account.h:32:23: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                             ^~~~~~~
+                             FundId
+/home/NETID/machokiu/ass5/account.h:32:35: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                         ^~~~~~~
+                                         Amount
+/home/NETID/machokiu/ass5/account.h:32:55: warning: invalid case style for parameter 'frontTrans' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                                             ^~~~~~~~~~~
+                                                             FrontTrans
+/home/NETID/machokiu/ass5/account.h:34:32: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                      ^~~~~~
+                                      Trans
+/home/NETID/machokiu/ass5/account.h:34:43: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                                 ^~~~~~~
+                                                 FundId
+/home/NETID/machokiu/ass5/account.h:36:33: warning: invalid case style for parameter 'pFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                       ^~~~~~
+                                       PFund
+/home/NETID/machokiu/ass5/account.h:36:44: warning: invalid case style for parameter 'sFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                  ^~~~~~
+                                                  SFund
+/home/NETID/machokiu/ass5/account.h:36:55: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                             ^~~~~~~
+                                                             Amount
+/home/NETID/machokiu/ass5/account.h:40:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void printFundHistory(int fundID);
+                                   ^~~~~~~
+                                   FundId
+/home/NETID/machokiu/ass5/account.h:42:18: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/account.h:42:33: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                       ^~~~~~~~~~
+                                       FirstName
+/home/NETID/machokiu/ass5/account.h:42:51: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                         ^~~~~~~~~
+                                                         LastName
+/home/NETID/machokiu/ass5/account.h:42:65: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                                       ^~~~~~~
+                                                                       FundId
+/home/NETID/machokiu/ass5/account.h:47:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         int getBalance(int fundID)const;
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:49:26: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         string getFundName(int fundID);
+                                ^~~~~~~
+                                FundId
+/home/NETID/machokiu/ass5/account.h:55:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void setFundID(int fundID);
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:58:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName, lastName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/account.h:58:20: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string firstName, lastName;
+                          ^~~~~~~~~
+                          LastName
+/home/NETID/machokiu/ass5/account.h:59:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/account.h:60:6: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int fundID;
+            ^~~~~~~
+            FundId
+/home/NETID/machokiu/ass5/account.h:61:7: warning: invalid case style for member 'arrayFund' [readability-identifier-naming]
+        Fund arrayFund[FUND_MAX];
+             ^~~~~~~~~~
+             ArrayFund
+/home/NETID/machokiu/ass5/fund.h:19:2: warning: single-argument constructors must be marked explicit to avoid unintentional implicit conversions [hicpp-explicit-conversions]
+        Fund(int balance = 0);
+        ^~~~
+        explicit 
+/home/NETID/machokiu/ass5/fund.h:19:11: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+        Fund(int balance = 0);
+                 ^~~~~~~
+                 Balance
+/home/NETID/machokiu/ass5/fund.h:24:20: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool withdraw(int amount);
+                          ^~~~~~~
+                          Amount
+/home/NETID/machokiu/ass5/fund.h:26:19: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool deposit(int amount);
+                         ^~~~~~~
+                         Amount
+/home/NETID/machokiu/ass5/fund.h:28:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool balanceCheck(int amount);
+                              ^~~~~~~
+                              Amount
+/home/NETID/machokiu/ass5/fund.h:30:37: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        bool recordTransaction(Transaction trans);
+                                           ^~~~~~
+                                           Trans
+/home/NETID/machokiu/ass5/fund.h:36:22: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+        void setName(string name);
+                            ^~~~~
+                            Name
+/home/NETID/machokiu/ass5/fund.h:44:9: warning: invalid case style for member 'fundName' [readability-identifier-naming]
+        string fundName;
+               ^~~~~~~~~
+               FundName
+/home/NETID/machokiu/ass5/fund.h:45:6: warning: invalid case style for member 'balance' [readability-identifier-naming]
+        int balance;
+            ^~~~~~~~
+            Balance
+/home/NETID/machokiu/ass5/fund.h:46:22: warning: invalid case style for member 'history' [readability-identifier-naming]
+        vector<Transaction> history;
+                            ^~~~~~~~
+                            History
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+/home/NETID/machokiu/ass5/account.h:10:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "fund.h"
+/home/NETID/machokiu/ass5/account.h:21:40: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                              ^~~~
+                                              Out
+/home/NETID/machokiu/ass5/account.h:21:54: warning: invalid case style for parameter 'acct' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                                            ^~~~~
+                                                            Acct
+/home/NETID/machokiu/ass5/account.h:21:54: warning: non-const reference parameter 'acct', make it const or use a pointer [google-runtime-references]
+/home/NETID/machokiu/ass5/account.h:25:18: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                        ^~~~~~~~~~
+                        FirstName
+/home/NETID/machokiu/ass5/account.h:25:36: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                          ^~~~~~~~~
+                                          LastName
+/home/NETID/machokiu/ass5/account.h:25:50: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                                        ^~~~~~~~~~
+                                                        AccountId
+/home/NETID/machokiu/ass5/account.h:30:25: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                               ^~~~~~~
+                               FundId
+/home/NETID/machokiu/ass5/account.h:30:37: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                                           ^~~~~~~
+                                           Amount
+/home/NETID/machokiu/ass5/account.h:32:23: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                             ^~~~~~~
+                             FundId
+/home/NETID/machokiu/ass5/account.h:32:35: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                         ^~~~~~~
+                                         Amount
+/home/NETID/machokiu/ass5/account.h:32:55: warning: invalid case style for parameter 'frontTrans' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                                             ^~~~~~~~~~~
+                                                             FrontTrans
+/home/NETID/machokiu/ass5/account.h:34:32: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                      ^~~~~~
+                                      Trans
+/home/NETID/machokiu/ass5/account.h:34:43: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                                 ^~~~~~~
+                                                 FundId
+/home/NETID/machokiu/ass5/account.h:36:33: warning: invalid case style for parameter 'pFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                       ^~~~~~
+                                       PFund
+/home/NETID/machokiu/ass5/account.h:36:44: warning: invalid case style for parameter 'sFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                  ^~~~~~
+                                                  SFund
+/home/NETID/machokiu/ass5/account.h:36:55: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                             ^~~~~~~
+                                                             Amount
+/home/NETID/machokiu/ass5/account.h:40:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void printFundHistory(int fundID);
+                                   ^~~~~~~
+                                   FundId
+/home/NETID/machokiu/ass5/account.h:42:18: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/account.h:42:33: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                       ^~~~~~~~~~
+                                       FirstName
+/home/NETID/machokiu/ass5/account.h:42:51: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                         ^~~~~~~~~
+                                                         LastName
+/home/NETID/machokiu/ass5/account.h:42:65: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                                       ^~~~~~~
+                                                                       FundId
+/home/NETID/machokiu/ass5/account.h:47:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         int getBalance(int fundID)const;
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:49:26: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         string getFundName(int fundID);
+                                ^~~~~~~
+                                FundId
+/home/NETID/machokiu/ass5/account.h:55:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void setFundID(int fundID);
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:58:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName, lastName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/account.h:58:20: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string firstName, lastName;
+                          ^~~~~~~~~
+                          LastName
+/home/NETID/machokiu/ass5/account.h:59:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/account.h:60:6: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int fundID;
+            ^~~~~~~
+            FundId
+/home/NETID/machokiu/ass5/account.h:61:7: warning: invalid case style for member 'arrayFund' [readability-identifier-naming]
+        Fund arrayFund[FUND_MAX];
+             ^~~~~~~~~~
+             ArrayFund
+/home/NETID/machokiu/ass5/accounttree.cpp:10:1: warning: constructor does not initialize these fields: Root [hicpp-member-init]
+AccountTree::AccountTree() = default;
+^
+/home/NETID/machokiu/ass5/accounttree.cpp:17:6: warning: invalid case style for variable 'insertAccountID' [readability-identifier-naming]
+        int insertAccountID = Account->getAccountID();
+            ^~~~~~~~~~~~~~~
+            InsertAccountId
+/home/NETID/machokiu/ass5/accounttree.cpp:23:14: warning: use nullptr [modernize-use-nullptr]
+        if (Root == NULL){
+                    ^~~~~
+                    nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:27:2: warning: do not use 'else' after 'return' [readability-else-after-return]
+        else
+        ^~~~
+/home/NETID/machokiu/ass5/accounttree.cpp:29:9: warning: invalid case style for variable 'current' [readability-identifier-naming]
+                Node* current = Root;
+                      ^~~~~~~
+                      Current
+/home/NETID/machokiu/ass5/accounttree.cpp:42:15: warning: use nullptr [modernize-use-nullptr]
+                if (Curr != NULL && AccountNumber == Curr->Account->getAccountID()){
+                            ^~~~
+                            nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:47:3: warning: do not use 'else' after 'return' [readability-else-after-return]
+                else if (Curr != NULL && AccountNumber > Curr->Account->getAccountID()){
+                ^~~~~~~~
+/home/NETID/machokiu/ass5/accounttree.cpp:47:20: warning: use nullptr [modernize-use-nullptr]
+                else if (Curr != NULL && AccountNumber > Curr->Account->getAccountID()){
+                                 ^~~~
+                                 nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:50:20: warning: use nullptr [modernize-use-nullptr]
+                else if (Curr != NULL && AccountNumber < Curr->Account->getAccountID()){
+                                 ^~~~
+                                 nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:63:14: warning: use nullptr [modernize-use-nullptr]
+        if (Root == NULL)
+                    ^~~~~
+                    nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:71:9: warning: use nullptr [modernize-use-nullptr]
+        Root = NULL;
+               ^~~~~
+               nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:76:24: warning: use nullptr [modernize-use-nullptr]
+        return (Root->Left == NULL && Root->Right == NULL);
+                              ^~~~
+                              nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:76:47: warning: use nullptr [modernize-use-nullptr]
+        return (Root->Left == NULL && Root->Right == NULL);
+                                                     ^~~~~
+                                                     nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:81:6: warning: Access to field 'Right' results in a dereference of a null pointer (loaded from variable 'Curr') [clang-analyzer-core.NullDereference]
+        if (Curr->Right != NULL && Curr->Left != NULL){
+            ^
+/home/NETID/machokiu/ass5/accounttree.cpp:63:6: note: Assuming pointer value is null
+        if (Root == NULL)
+            ^
+/home/NETID/machokiu/ass5/accounttree.cpp:63:2: note: Taking true branch
+        if (Root == NULL)
+        ^
+/home/NETID/machokiu/ass5/accounttree.cpp:65:12: note: Passing null pointer value via 1st parameter 'Curr'
+        printTree(Root);
+                  ^
+/home/NETID/machokiu/ass5/accounttree.cpp:65:2: note: Calling 'AccountTree::printTree'
+        printTree(Root);
+        ^
+/home/NETID/machokiu/ass5/accounttree.cpp:81:6: note: Access to field 'Right' results in a dereference of a null pointer (loaded from variable 'Curr')
+        if (Curr->Right != NULL && Curr->Left != NULL){
+            ^
+/home/NETID/machokiu/ass5/accounttree.cpp:81:21: warning: use nullptr [modernize-use-nullptr]
+        if (Curr->Right != NULL && Curr->Left != NULL){
+                           ^~~~
+                           nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:81:43: warning: use nullptr [modernize-use-nullptr]
+        if (Curr->Right != NULL && Curr->Left != NULL){
+                                                 ^~~~~
+                                                 nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:86:25: warning: use nullptr [modernize-use-nullptr]
+        else if (Curr->Left != NULL){
+                               ^~~~~
+                               nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:90:26: warning: use nullptr [modernize-use-nullptr]
+        else if (Curr->Right != NULL){
+                                ^~~~~
+                                nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:102:22: warning: use nullptr [modernize-use-nullptr]
+                if (Curr->Right == NULL){
+                                   ^~~~~
+                                   nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:103:10: warning: invalid case style for variable 'inTree' [readability-identifier-naming]
+                        Node* inTree = new Node(Acc);
+                              ^~~~~~
+                              InTree
+/home/NETID/machokiu/ass5/accounttree.cpp:107:3: warning: do not use 'else' after 'return' [readability-else-after-return]
+                else{
+                ^~~~~
+/home/NETID/machokiu/ass5/accounttree.cpp:113:21: warning: use nullptr [modernize-use-nullptr]
+                if (Curr->Left == NULL){
+                                  ^~~~~
+                                  nullptr
+/home/NETID/machokiu/ass5/accounttree.cpp:114:10: warning: invalid case style for variable 'inTree' [readability-identifier-naming]
+                        Node* inTree = new Node(Acc);
+                              ^~~~~~
+                              InTree
+/home/NETID/machokiu/ass5/accounttree.cpp:118:3: warning: do not use 'else' after 'return' [readability-else-after-return]
+                else{
+                ^~~~~
+/home/NETID/machokiu/ass5/accounttree.h:26:53: warning: non-const reference parameter 'Account', make it const or use a pointer [google-runtime-references]
+  bool retrieve(const int &AccountNumber, Account *&Account) const;
+                                                    ^
+/home/NETID/machokiu/ass5/fund.h:19:2: warning: single-argument constructors must be marked explicit to avoid unintentional implicit conversions [hicpp-explicit-conversions]
+        Fund(int balance = 0);
+        ^~~~
+        explicit 
+/home/NETID/machokiu/ass5/fund.h:19:11: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+        Fund(int balance = 0);
+                 ^~~~~~~
+                 Balance
+/home/NETID/machokiu/ass5/fund.h:24:20: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool withdraw(int amount);
+                          ^~~~~~~
+                          Amount
+/home/NETID/machokiu/ass5/fund.h:26:19: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool deposit(int amount);
+                         ^~~~~~~
+                         Amount
+/home/NETID/machokiu/ass5/fund.h:28:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool balanceCheck(int amount);
+                              ^~~~~~~
+                              Amount
+/home/NETID/machokiu/ass5/fund.h:30:37: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        bool recordTransaction(Transaction trans);
+                                           ^~~~~~
+                                           Trans
+/home/NETID/machokiu/ass5/fund.h:36:22: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+        void setName(string name);
+                            ^~~~~
+                            Name
+/home/NETID/machokiu/ass5/fund.h:44:9: warning: invalid case style for member 'fundName' [readability-identifier-naming]
+        string fundName;
+               ^~~~~~~~~
+               FundName
+/home/NETID/machokiu/ass5/fund.h:45:6: warning: invalid case style for member 'balance' [readability-identifier-naming]
+        int balance;
+            ^~~~~~~~
+            Balance
+/home/NETID/machokiu/ass5/fund.h:46:22: warning: invalid case style for member 'history' [readability-identifier-naming]
+        vector<Transaction> history;
+                            ^~~~~~~~
+                            History
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+/home/NETID/machokiu/ass5/account.h:10:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "fund.h"
+/home/NETID/machokiu/ass5/account.h:21:40: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                              ^~~~
+                                              Out
+/home/NETID/machokiu/ass5/account.h:21:54: warning: invalid case style for parameter 'acct' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                                            ^~~~~
+                                                            Acct
+/home/NETID/machokiu/ass5/account.h:21:54: warning: non-const reference parameter 'acct', make it const or use a pointer [google-runtime-references]
+/home/NETID/machokiu/ass5/account.h:25:18: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                        ^~~~~~~~~~
+                        FirstName
+/home/NETID/machokiu/ass5/account.h:25:36: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                          ^~~~~~~~~
+                                          LastName
+/home/NETID/machokiu/ass5/account.h:25:50: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                                        ^~~~~~~~~~
+                                                        AccountId
+/home/NETID/machokiu/ass5/account.h:30:25: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                               ^~~~~~~
+                               FundId
+/home/NETID/machokiu/ass5/account.h:30:37: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                                           ^~~~~~~
+                                           Amount
+/home/NETID/machokiu/ass5/account.h:32:23: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                             ^~~~~~~
+                             FundId
+/home/NETID/machokiu/ass5/account.h:32:35: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                         ^~~~~~~
+                                         Amount
+/home/NETID/machokiu/ass5/account.h:32:55: warning: invalid case style for parameter 'frontTrans' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                                             ^~~~~~~~~~~
+                                                             FrontTrans
+/home/NETID/machokiu/ass5/account.h:34:32: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                      ^~~~~~
+                                      Trans
+/home/NETID/machokiu/ass5/account.h:34:43: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                                 ^~~~~~~
+                                                 FundId
+/home/NETID/machokiu/ass5/account.h:36:33: warning: invalid case style for parameter 'pFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                       ^~~~~~
+                                       PFund
+/home/NETID/machokiu/ass5/account.h:36:44: warning: invalid case style for parameter 'sFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                  ^~~~~~
+                                                  SFund
+/home/NETID/machokiu/ass5/account.h:36:55: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                             ^~~~~~~
+                                                             Amount
+/home/NETID/machokiu/ass5/account.h:40:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void printFundHistory(int fundID);
+                                   ^~~~~~~
+                                   FundId
+/home/NETID/machokiu/ass5/account.h:42:18: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/account.h:42:33: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                       ^~~~~~~~~~
+                                       FirstName
+/home/NETID/machokiu/ass5/account.h:42:51: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                         ^~~~~~~~~
+                                                         LastName
+/home/NETID/machokiu/ass5/account.h:42:65: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                                       ^~~~~~~
+                                                                       FundId
+/home/NETID/machokiu/ass5/account.h:47:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         int getBalance(int fundID)const;
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:49:26: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         string getFundName(int fundID);
+                                ^~~~~~~
+                                FundId
+/home/NETID/machokiu/ass5/account.h:55:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void setFundID(int fundID);
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:58:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName, lastName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/account.h:58:20: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string firstName, lastName;
+                          ^~~~~~~~~
+                          LastName
+/home/NETID/machokiu/ass5/account.h:59:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/account.h:60:6: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int fundID;
+            ^~~~~~~
+            FundId
+/home/NETID/machokiu/ass5/account.h:61:7: warning: invalid case style for member 'arrayFund' [readability-identifier-naming]
+        Fund arrayFund[FUND_MAX];
+             ^~~~~~~~~~
+             ArrayFund
+/home/NETID/machokiu/ass5/accounttree.h:26:53: warning: non-const reference parameter 'Account', make it const or use a pointer [google-runtime-references]
+  bool retrieve(const int &AccountNumber, Account *&Account) const;
+                                                    ^
+/home/NETID/machokiu/ass5/bank.cpp:8:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <queue>
+^        ~~~~~~~
+         "account.h"
+/home/NETID/machokiu/ass5/bank.cpp:29:11: warning: invalid case style for variable 'in' [readability-identifier-naming]
+        ifstream in(FileName);
+                 ^~~
+                 In
+/home/NETID/machokiu/ass5/bank.cpp:30:9: warning: invalid case style for variable 'readLine' [readability-identifier-naming]
+        string readLine;
+               ^~~~~~~~~
+               ReadLine
+/home/NETID/machokiu/ass5/bank.cpp:39:17: warning: invalid case style for variable 'parseLine' [readability-identifier-naming]
+                istringstream parseLine(readLine);
+                              ^~~~~~~~~~
+                              ParseLine
+/home/NETID/machokiu/ass5/bank.cpp:40:8: warning: invalid case style for variable 'transactionType' [readability-identifier-naming]
+                char transactionType;
+                     ^~~~~~~~~~~~~~~~
+                     TransactionType
+/home/NETID/machokiu/ass5/bank.cpp:43:11: warning: invalid case style for variable 'lastName' [readability-identifier-naming]
+                        string lastName, firstName;
+                               ^~~~~~~~~
+                               LastName
+/home/NETID/machokiu/ass5/bank.cpp:43:21: warning: invalid case style for variable 'firstName' [readability-identifier-naming]
+                        string lastName, firstName;
+                                         ^~~~~~~~~~
+                                         FirstName
+/home/NETID/machokiu/ass5/bank.cpp:44:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID;
+                            ^~~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:46:16: warning: invalid case style for variable 'addToQueue' [readability-identifier-naming]
+                        Transaction addToQueue(transactionType, firstName, lastName, "", accountID, 0, 0, 0, 0);
+                                    ^~~~~~~~~~~
+                                    AddToQueue
+/home/NETID/machokiu/ass5/bank.cpp:50:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID, fundID, amount;
+                            ^~~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:50:19: warning: invalid case style for variable 'fundID' [readability-identifier-naming]
+                        int accountID, fundID, amount;
+                                       ^~~~~~~
+                                       FundId
+/home/NETID/machokiu/ass5/bank.cpp:50:27: warning: invalid case style for variable 'amount' [readability-identifier-naming]
+                        int accountID, fundID, amount;
+                                               ^~~~~~~
+                                               Amount
+/home/NETID/machokiu/ass5/bank.cpp:54:16: warning: invalid case style for variable 'addToQueue' [readability-identifier-naming]
+                        Transaction addToQueue(transactionType, "", "", "", accountID, fundID, 0, 0, amount);
+                                    ^~~~~~~~~~~
+                                    AddToQueue
+/home/NETID/machokiu/ass5/bank.cpp:58:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID, fundID, amount, trasnferAccountID, transferFundID;
+                            ^~~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:58:19: warning: invalid case style for variable 'fundID' [readability-identifier-naming]
+                        int accountID, fundID, amount, trasnferAccountID, transferFundID;
+                                       ^~~~~~~
+                                       FundId
+/home/NETID/machokiu/ass5/bank.cpp:58:27: warning: invalid case style for variable 'amount' [readability-identifier-naming]
+                        int accountID, fundID, amount, trasnferAccountID, transferFundID;
+                                               ^~~~~~~
+                                               Amount
+/home/NETID/machokiu/ass5/bank.cpp:58:35: warning: invalid case style for variable 'trasnferAccountID' [readability-identifier-naming]
+                        int accountID, fundID, amount, trasnferAccountID, transferFundID;
+                                                       ^~~~~~~~~~~~~~~~~~
+                                                       TrasnferAccountId
+/home/NETID/machokiu/ass5/bank.cpp:58:54: warning: invalid case style for variable 'transferFundID' [readability-identifier-naming]
+                        int accountID, fundID, amount, trasnferAccountID, transferFundID;
+                                                                          ^~~~~~~~~~~~~~~
+                                                                          TransferFundId
+/home/NETID/machokiu/ass5/bank.cpp:64:16: warning: invalid case style for variable 'addToQueue' [readability-identifier-naming]
+                        Transaction addToQueue(transactionType, "", "", "", accountID, 
+                                    ^~~~~~~~~~~
+                                    AddToQueue
+/home/NETID/machokiu/ass5/bank.cpp:69:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID;
+                            ^~~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:71:16: warning: invalid case style for variable 'addToQueue' [readability-identifier-naming]
+                        Transaction addToQueue(transactionType, "", "", "", accountID, 0, 0, 0, 0);
+                                    ^~~~~~~~~~~
+                                    AddToQueue
+/home/NETID/machokiu/ass5/bank.cpp:86:15: warning: invalid case style for variable 'frontTrans' [readability-identifier-naming]
+                Transaction frontTrans = transactionQueue.front();
+                            ^~~~~~~~~~
+                            FrontTrans
+/home/NETID/machokiu/ass5/bank.cpp:88:13: warning: invalid case style for variable 'account' [readability-identifier-naming]
+                        Account* account = new Account(frontTrans.getFirstName(), 
+                                 ^~~~~~~
+                                 Account
+/home/NETID/machokiu/ass5/bank.cpp:93:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID = frontTrans.getAccountID();
+                            ^~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:94:8: warning: invalid case style for variable 'fundID' [readability-identifier-naming]
+                        int fundID = frontTrans.getFundID();
+                            ^~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/bank.cpp:95:8: warning: invalid case style for variable 'deposit' [readability-identifier-naming]
+                        int deposit = frontTrans.getAmount();
+                            ^~~~~~~
+                            Deposit
+/home/NETID/machokiu/ass5/bank.cpp:96:13: warning: invalid case style for variable 'account' [readability-identifier-naming]
+                        Account* account;
+                                 ^~~~~~~~
+                                 Account
+/home/NETID/machokiu/ass5/bank.cpp:104:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID = frontTrans.getAccountID();
+                            ^~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:105:8: warning: invalid case style for variable 'fundID' [readability-identifier-naming]
+                        int fundID = frontTrans.getFundID();
+                            ^~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/bank.cpp:106:8: warning: invalid case style for variable 'withdraw' [readability-identifier-naming]
+                        int withdraw = frontTrans.getAmount();
+                            ^~~~~~~~
+                            Withdraw
+/home/NETID/machokiu/ass5/bank.cpp:107:13: warning: invalid case style for variable 'account' [readability-identifier-naming]
+                        Account* account;
+                                 ^~~~~~~~
+                                 Account
+/home/NETID/machokiu/ass5/bank.cpp:112:8: warning: invalid case style for variable 'accountID' [readability-identifier-naming]
+                        int accountID = frontTrans.getAccountID();
+                            ^~~~~~~~~
+                            AccountId
+/home/NETID/machokiu/ass5/bank.cpp:113:8: warning: invalid case style for variable 'transferAcc' [readability-identifier-naming]
+                        int transferAcc = frontTrans.getTransferAccountID();
+                            ^~~~~~~~~~~
+                            TransferAcc
+/home/NETID/machokiu/ass5/bank.cpp:114:8: warning: invalid case style for variable 'fundID' [readability-identifier-naming]
+                        int fundID = frontTrans.getFundID();
+                            ^~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/bank.cpp:115:8: warning: invalid case style for variable 'transferFund' [readability-identifier-naming]
+                        int transferFund = frontTrans.getTransferFundID();
+                            ^~~~~~~~~~~~
+                            TransferFund
+/home/NETID/machokiu/ass5/bank.cpp:116:8: warning: invalid case style for variable 'trans' [readability-identifier-naming]
+                        int trans = frontTrans.getAmount();
+                            ^~~~~
+                            Trans
+/home/NETID/machokiu/ass5/bank.cpp:127:18: warning: invalid case style for variable 'addToHistory' [readability-identifier-naming]
+                                        Transaction addToHistory('T',"","", "(Failed)", accountID, 
+                                                    ^~~~~~~~~~~~~
+                                                    AddToHistory
+/home/NETID/machokiu/ass5/bank.cpp:136:14: warning: invalid case style for variable 'account' [readability-identifier-naming]
+                                Account* account;
+                                         ^~~~~~~~
+                                         Account
+/home/NETID/machokiu/ass5/bank.cpp:137:9: warning: invalid case style for variable 'fundNumPrt' [readability-identifier-naming]
+                                int fundNumPrt = frontTrans.getAccountID() % 10;
+                                    ^~~~~~~~~~
+                                    FundNumPrt
+/home/NETID/machokiu/ass5/bank.cpp:138:9: warning: invalid case style for variable 'acctNumSearch' [readability-identifier-naming]
+                                int acctNumSearch = frontTrans.getAccountID() / 10;
+                                    ^~~~~~~~~~~~~
+                                    AcctNumSearch
+/home/NETID/machokiu/ass5/bank.cpp:145:14: warning: invalid case style for variable 'account' [readability-identifier-naming]
+                                Account* account;
+                                         ^~~~~~~~
+                                         Account
+/home/NETID/machokiu/ass5/bank.cpp:146:9: warning: invalid case style for variable 'acctNumSearch' [readability-identifier-naming]
+                                int acctNumSearch = frontTrans.getAccountID();
+                                    ^~~~~~~~~~~~~
+                                    AcctNumSearch
+/home/NETID/machokiu/ass5/bank.h:9:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <queue>
+^        ~~~~~~~
+         "account.h"
+/home/NETID/machokiu/ass5/bank.h:45:22: warning: invalid case style for member 'transactionQueue' [readability-identifier-naming]
+  queue<Transaction> transactionQueue;
+                     ^~~~~~~~~~~~~~~~~
+                     TransactionQueue
+/home/NETID/machokiu/ass5/fund.h:19:2: warning: single-argument constructors must be marked explicit to avoid unintentional implicit conversions [hicpp-explicit-conversions]
+        Fund(int balance = 0);
+        ^~~~
+        explicit 
+/home/NETID/machokiu/ass5/fund.h:19:11: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+        Fund(int balance = 0);
+                 ^~~~~~~
+                 Balance
+/home/NETID/machokiu/ass5/fund.h:24:20: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool withdraw(int amount);
+                          ^~~~~~~
+                          Amount
+/home/NETID/machokiu/ass5/fund.h:26:19: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool deposit(int amount);
+                         ^~~~~~~
+                         Amount
+/home/NETID/machokiu/ass5/fund.h:28:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool balanceCheck(int amount);
+                              ^~~~~~~
+                              Amount
+/home/NETID/machokiu/ass5/fund.h:30:37: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        bool recordTransaction(Transaction trans);
+                                           ^~~~~~
+                                           Trans
+/home/NETID/machokiu/ass5/fund.h:36:22: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+        void setName(string name);
+                            ^~~~~
+                            Name
+/home/NETID/machokiu/ass5/fund.h:44:9: warning: invalid case style for member 'fundName' [readability-identifier-naming]
+        string fundName;
+               ^~~~~~~~~
+               FundName
+/home/NETID/machokiu/ass5/fund.h:45:6: warning: invalid case style for member 'balance' [readability-identifier-naming]
+        int balance;
+            ^~~~~~~~
+            Balance
+/home/NETID/machokiu/ass5/fund.h:46:22: warning: invalid case style for member 'history' [readability-identifier-naming]
+        vector<Transaction> history;
+                            ^~~~~~~~
+                            History
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+/home/NETID/machokiu/ass5/fund.cpp:12:16: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+Fund::Fund(int balance) :balance{balance}{
+               ^~~~~~~~          ~~~~~~~~
+               Balance           Balance
+/home/NETID/machokiu/ass5/fund.cpp:16:7: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Fund::~Fund(){
+      ^      ~
+             = default;
+/home/NETID/machokiu/ass5/fund.cpp:20:25: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+bool Fund::withdraw(int amount) {
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/fund.cpp:26:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+bool Fund::deposit(int amount){
+                       ^~~~~~~
+                       Amount
+/home/NETID/machokiu/ass5/fund.cpp:31:29: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+bool Fund::balanceCheck(int amount){
+                            ^~~~~~~
+                            Amount
+/home/NETID/machokiu/ass5/fund.cpp:36:42: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+bool Fund::recordTransaction(Transaction trans){
+                                         ^~~~~~
+                                         Trans
+/home/NETID/machokiu/ass5/fund.cpp:36:42: warning: the parameter 'trans' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+bool Fund::recordTransaction(Transaction trans){
+                             ~~~~~~~~~~~ ^
+                             const &
+/home/NETID/machokiu/ass5/fund.cpp:47:2: warning: do not use 'else' after 'return' [readability-else-after-return]
+        else{
+        ^~~~~
+/home/NETID/machokiu/ass5/fund.cpp:49:3: warning: use range-based for loop instead [modernize-loop-convert]
+                for (int I = 0; I < history.size(); ++I){
+                ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    (const auto & I : history)
+/home/NETID/machokiu/ass5/fund.cpp:57:2: warning: use range-based for loop instead [modernize-loop-convert]
+        for (int I = 0; I < history.size(); ++I)
+        ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            (const auto & I : history)
+/home/NETID/machokiu/ass5/fund.cpp:62:27: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+void Fund::setName(string name){
+                          ^~~~~
+                          Name
+/home/NETID/machokiu/ass5/fund.cpp:63:19: warning: parameter 'name' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        this->fundName = name;
+                         ^~~~~
+                         std::move()
+/home/NETID/machokiu/ass5/fund.h:19:2: warning: single-argument constructors must be marked explicit to avoid unintentional implicit conversions [hicpp-explicit-conversions]
+        Fund(int balance = 0);
+        ^~~~
+        explicit 
+/home/NETID/machokiu/ass5/fund.h:19:11: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+        Fund(int balance = 0);
+                 ^~~~~~~
+                 Balance
+/home/NETID/machokiu/ass5/fund.h:24:20: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool withdraw(int amount);
+                          ^~~~~~~
+                          Amount
+/home/NETID/machokiu/ass5/fund.h:26:19: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool deposit(int amount);
+                         ^~~~~~~
+                         Amount
+/home/NETID/machokiu/ass5/fund.h:28:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool balanceCheck(int amount);
+                              ^~~~~~~
+                              Amount
+/home/NETID/machokiu/ass5/fund.h:30:37: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        bool recordTransaction(Transaction trans);
+                                           ^~~~~~
+                                           Trans
+/home/NETID/machokiu/ass5/fund.h:36:22: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+        void setName(string name);
+                            ^~~~~
+                            Name
+/home/NETID/machokiu/ass5/fund.h:44:9: warning: invalid case style for member 'fundName' [readability-identifier-naming]
+        string fundName;
+               ^~~~~~~~~
+               FundName
+/home/NETID/machokiu/ass5/fund.h:45:6: warning: invalid case style for member 'balance' [readability-identifier-naming]
+        int balance;
+            ^~~~~~~~
+            Balance
+/home/NETID/machokiu/ass5/fund.h:46:22: warning: invalid case style for member 'history' [readability-identifier-naming]
+        vector<Transaction> history;
+                            ^~~~~~~~
+                            History
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+/home/NETID/machokiu/ass5/account.h:10:1: warning: #includes are not sorted properly [llvm-include-order]
+#include "transaction.h"
+^        ~~~~~~~~~~~~~~~
+         "fund.h"
+/home/NETID/machokiu/ass5/account.h:21:40: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                              ^~~~
+                                              Out
+/home/NETID/machokiu/ass5/account.h:21:54: warning: invalid case style for parameter 'acct' [readability-identifier-naming]
+        friend ostream& operator << (ostream& out, Account& acct);
+                                                            ^~~~~
+                                                            Acct
+/home/NETID/machokiu/ass5/account.h:21:54: warning: non-const reference parameter 'acct', make it const or use a pointer [google-runtime-references]
+/home/NETID/machokiu/ass5/account.h:25:18: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                        ^~~~~~~~~~
+                        FirstName
+/home/NETID/machokiu/ass5/account.h:25:36: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                          ^~~~~~~~~
+                                          LastName
+/home/NETID/machokiu/ass5/account.h:25:50: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+         Account(string firstName, string lastName, int accountID);
+                                                        ^~~~~~~~~~
+                                                        AccountId
+/home/NETID/machokiu/ass5/account.h:30:25: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                               ^~~~~~~
+                               FundId
+/home/NETID/machokiu/ass5/account.h:30:37: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void addToAccount(int fundID, int amount);
+                                           ^~~~~~~
+                                           Amount
+/home/NETID/machokiu/ass5/account.h:32:23: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                             ^~~~~~~
+                             FundId
+/home/NETID/machokiu/ass5/account.h:32:35: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                         ^~~~~~~
+                                         Amount
+/home/NETID/machokiu/ass5/account.h:32:55: warning: invalid case style for parameter 'frontTrans' [readability-identifier-naming]
+         bool minusFunds(int fundID, int amount, Transaction frontTrans);
+                                                             ^~~~~~~~~~~
+                                                             FrontTrans
+/home/NETID/machokiu/ass5/account.h:34:32: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                      ^~~~~~
+                                      Trans
+/home/NETID/machokiu/ass5/account.h:34:43: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void recordTrans(Transaction trans, int fundID);
+                                                 ^~~~~~~
+                                                 FundId
+/home/NETID/machokiu/ass5/account.h:36:33: warning: invalid case style for parameter 'pFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                       ^~~~~~
+                                       PFund
+/home/NETID/machokiu/ass5/account.h:36:44: warning: invalid case style for parameter 'sFund' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                  ^~~~~~
+                                                  SFund
+/home/NETID/machokiu/ass5/account.h:36:55: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void widthFromSimilarAcct(int pFund, int sFund, int amount);
+                                                             ^~~~~~~
+                                                             Amount
+/home/NETID/machokiu/ass5/account.h:40:29: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void printFundHistory(int fundID);
+                                   ^~~~~~~
+                                   FundId
+/home/NETID/machokiu/ass5/account.h:42:18: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                        ^~~~~~~
+                        Amount
+/home/NETID/machokiu/ass5/account.h:42:33: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                       ^~~~~~~~~~
+                                       FirstName
+/home/NETID/machokiu/ass5/account.h:42:51: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                         ^~~~~~~~~
+                                                         LastName
+/home/NETID/machokiu/ass5/account.h:42:65: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void error(int amount, string firstName, string lastName, int fundID);
+                                                                       ^~~~~~~
+                                                                       FundId
+/home/NETID/machokiu/ass5/account.h:47:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         int getBalance(int fundID)const;
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:49:26: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         string getFundName(int fundID);
+                                ^~~~~~~
+                                FundId
+/home/NETID/machokiu/ass5/account.h:55:22: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+         void setFundID(int fundID);
+                            ^~~~~~~
+                            FundId
+/home/NETID/machokiu/ass5/account.h:58:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName, lastName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/account.h:58:20: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string firstName, lastName;
+                          ^~~~~~~~~
+                          LastName
+/home/NETID/machokiu/ass5/account.h:59:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/account.h:60:6: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int fundID;
+            ^~~~~~~
+            FundId
+/home/NETID/machokiu/ass5/account.h:61:7: warning: invalid case style for member 'arrayFund' [readability-identifier-naming]
+        Fund arrayFund[FUND_MAX];
+             ^~~~~~~~~~
+             ArrayFund
+/home/NETID/machokiu/ass5/accounttree.h:26:53: warning: non-const reference parameter 'Account', make it const or use a pointer [google-runtime-references]
+  bool retrieve(const int &AccountNumber, Account *&Account) const;
+                                                    ^
+/home/NETID/machokiu/ass5/bank.h:9:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <queue>
+^        ~~~~~~~
+         "account.h"
+/home/NETID/machokiu/ass5/bank.h:45:22: warning: invalid case style for member 'transactionQueue' [readability-identifier-naming]
+  queue<Transaction> transactionQueue;
+                     ^~~~~~~~~~~~~~~~~
+                     TransactionQueue
+/home/NETID/machokiu/ass5/fund.h:19:2: warning: single-argument constructors must be marked explicit to avoid unintentional implicit conversions [google-explicit-constructor]
+        Fund(int balance = 0);
+        ^~~~
+        explicit 
+/home/NETID/machokiu/ass5/fund.h:19:11: warning: invalid case style for parameter 'balance' [readability-identifier-naming]
+        Fund(int balance = 0);
+                 ^~~~~~~
+                 Balance
+/home/NETID/machokiu/ass5/fund.h:24:20: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool withdraw(int amount);
+                          ^~~~~~~
+                          Amount
+/home/NETID/machokiu/ass5/fund.h:26:19: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool deposit(int amount);
+                         ^~~~~~~
+                         Amount
+/home/NETID/machokiu/ass5/fund.h:28:24: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        bool balanceCheck(int amount);
+                              ^~~~~~~
+                              Amount
+/home/NETID/machokiu/ass5/fund.h:30:37: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        bool recordTransaction(Transaction trans);
+                                           ^~~~~~
+                                           Trans
+/home/NETID/machokiu/ass5/fund.h:36:22: warning: invalid case style for parameter 'name' [readability-identifier-naming]
+        void setName(string name);
+                            ^~~~~
+                            Name
+/home/NETID/machokiu/ass5/fund.h:44:9: warning: invalid case style for member 'fundName' [readability-identifier-naming]
+        string fundName;
+               ^~~~~~~~~
+               FundName
+/home/NETID/machokiu/ass5/fund.h:45:6: warning: invalid case style for member 'balance' [readability-identifier-naming]
+        int balance;
+            ^~~~~~~~
+            Balance
+/home/NETID/machokiu/ass5/fund.h:46:22: warning: invalid case style for member 'history' [readability-identifier-naming]
+        vector<Transaction> history;
+                            ^~~~~~~~
+                            History
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+/home/NETID/machokiu/ass5/transaction.cpp:16:30: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+ostream& operator<<(ostream& out, const Transaction& trans) {
+                             ^~~~
+                             Out
+/home/NETID/machokiu/ass5/transaction.cpp:16:54: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+ostream& operator<<(ostream& out, const Transaction& trans) {
+                                                     ^~~~~~
+                                                     Trans
+/home/NETID/machokiu/ass5/transaction.cpp:43:31: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+Transaction::Transaction(char transactionType, string firstName, string lastName,
+                              ^~~~~~~~~~~~~~~~
+                              TransactionType
+/home/NETID/machokiu/ass5/transaction.cpp:43:55: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+Transaction::Transaction(char transactionType, string firstName, string lastName,
+                                                      ^~~~~~~~~~
+                                                      FirstName
+/home/NETID/machokiu/ass5/transaction.cpp:43:73: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+Transaction::Transaction(char transactionType, string firstName, string lastName,
+                                                                        ^~~~~~~~~
+                                                                        LastName
+/home/NETID/machokiu/ass5/transaction.cpp:44:9: warning: invalid case style for parameter 'fail' [readability-identifier-naming]
+        string fail, int accountID, int fundID, int transferAccountID,
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.cpp:44:19: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        string fail, int accountID, int fundID, int transferAccountID,
+                         ^~~~~~~~~~
+                         AccountId
+/home/NETID/machokiu/ass5/transaction.cpp:44:34: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+        string fail, int accountID, int fundID, int transferAccountID,
+                                        ^~~~~~~
+                                        FundId
+/home/NETID/machokiu/ass5/transaction.cpp:44:46: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+        string fail, int accountID, int fundID, int transferAccountID,
+                                                    ^~~~~~~~~~~~~~~~~~
+                                                    TransferAccountId
+/home/NETID/machokiu/ass5/transaction.cpp:45:6: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+        int transferFundID, int amount) 
+            ^~~~~~~~~~~~~~~
+            TransferFundId
+/home/NETID/machokiu/ass5/transaction.cpp:45:26: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+        int transferFundID, int amount) 
+                                ^~~~~~~
+                                Amount
+/home/NETID/machokiu/ass5/transaction.cpp:46:51: warning: parameter 'firstName' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        : transactionType{ transactionType }, firstName{ firstName }, lastName{ lastName },
+                                                         ^~~~~~~~~
+                                                         std::move()
+/home/NETID/machokiu/ass5/transaction.cpp:46:74: warning: parameter 'lastName' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        : transactionType{ transactionType }, firstName{ firstName }, lastName{ lastName },
+                                                                                ^~~~~~~~
+                                                                                std::move()
+/home/NETID/machokiu/ass5/transaction.cpp:47:7: warning: parameter 'fail' is passed by value and only copied once; consider moving it to avoid unnecessary copies [performance-unnecessary-value-param]
+        fail{fail}, accountID{ accountID }, fundID{ fundID }, 
+             ^~~~~
+             std::move()
+/home/NETID/machokiu/ass5/transaction.cpp:52:16: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Transaction :: ~Transaction() {
+               ^              ~
+                              = default;
+/home/NETID/machokiu/ass5/transaction.h:14:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <string>
+^        ~~~~~~~~
+/home/NETID/machokiu/ass5/transaction.h:20:38: warning: invalid case style for parameter 'out' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                            ^~~~
+                                            Out
+/home/NETID/machokiu/ass5/transaction.h:20:62: warning: invalid case style for parameter 'trans' [readability-identifier-naming]
+        friend ostream& operator<<(ostream& out, const Transaction& trans);
+                                                                    ^~~~~~
+                                                                    Trans
+/home/NETID/machokiu/ass5/transaction.h:23:19: warning: invalid case style for parameter 'transactionType' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                         ^~~~~~~~~~~~~~~~
+                         TransactionType
+/home/NETID/machokiu/ass5/transaction.h:23:43: warning: invalid case style for parameter 'firstName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                 ^~~~~~~~~~
+                                                 FirstName
+/home/NETID/machokiu/ass5/transaction.h:23:61: warning: invalid case style for parameter 'lastName' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                   ^~~~~~~~~
+                                                                   LastName
+/home/NETID/machokiu/ass5/transaction.h:23:88: warning: invalid case style for parameter 'accountID' [readability-identifier-naming]
+        Transaction(char transactionType, string firstName, string lastName, string Fail, int accountID, 
+                                                                                              ^~~~~~~~~~
+                                                                                              AccountId
+/home/NETID/machokiu/ass5/transaction.h:24:7: warning: invalid case style for parameter 'fundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                    ^~~~~~~
+                    FundId
+/home/NETID/machokiu/ass5/transaction.h:24:19: warning: invalid case style for parameter 'transferAccountID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                ^~~~~~~~~~~~~~~~~~
+                                TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:24:42: warning: invalid case style for parameter 'transferFundID' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                       ^~~~~~~~~~~~~~~
+                                                       TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:24:62: warning: invalid case style for parameter 'amount' [readability-identifier-naming]
+                int fundID, int transferAccountID, int transferFundID, int amount);
+                                                                           ^~~~~~~
+                                                                           Amount
+/home/NETID/machokiu/ass5/transaction.h:48:7: warning: invalid case style for member 'transactionType' [readability-identifier-naming]
+        char transactionType;
+             ^~~~~~~~~~~~~~~~
+             TransactionType
+/home/NETID/machokiu/ass5/transaction.h:49:9: warning: invalid case style for member 'firstName' [readability-identifier-naming]
+        string firstName;
+               ^~~~~~~~~~
+               FirstName
+/home/NETID/machokiu/ass5/transaction.h:50:9: warning: invalid case style for member 'lastName' [readability-identifier-naming]
+        string lastName;
+               ^~~~~~~~~
+               LastName
+/home/NETID/machokiu/ass5/transaction.h:51:9: warning: invalid case style for member 'fail' [readability-identifier-naming]
+        string fail;
+               ^~~~~
+               Fail
+/home/NETID/machokiu/ass5/transaction.h:52:6: warning: invalid case style for member 'accountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+            ^~~~~~~~~~
+            AccountId
+/home/NETID/machokiu/ass5/transaction.h:52:17: warning: invalid case style for member 'fundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                       ^~~~~~~
+                       FundId
+/home/NETID/machokiu/ass5/transaction.h:52:25: warning: invalid case style for member 'transferAccountID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                               ^~~~~~~~~~~~~~~~~~
+                               TransferAccountId
+/home/NETID/machokiu/ass5/transaction.h:52:44: warning: invalid case style for member 'transferFundID' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                  ^~~~~~~~~~~~~~~
+                                                  TransferFundId
+/home/NETID/machokiu/ass5/transaction.h:52:60: warning: invalid case style for member 'amount' [readability-identifier-naming]
+        int accountID, fundID, transferAccountID, transferFundID, amount;
+                                                                  ^~~~~~~
+                                                                  Amount
+Suppressed 73620 warnings (73620 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running myprogram
+ERROR: Not Enought Funds to withdraw 20000 from Cash Johnny Growth Index Fund
+Transaction History for Cash Johnny By Fund.
+Money Market: $470
+  D 10010 542
+
+  W 10010 72
+
+Prime Money Market: $3042
+  D 10011 1542
+
+  D 10011 1500
+
+Long-Term Bond: $10442
+  D 10012 5442
+
+  D 10012 5000
+
+Short-Term Bond: $14540
+  D 10013 7540
+
+  D 10013 7000
+
+Capital Value Fund: $54
+  T 10017 54 10015
+
+Growth Equity Fund: $15053
+  D 10016 7542
+
+  D 10016 7576
+
+  W 10016 65
+
+Growth Index Fund: $10931
+  D 10017 5442
+
+  D 10017 6543
+
+  W 10017 1000
+
+  T 10017 54 10015
+
+ 
+
+Transaction History for Williams Hank 500 Index Fund $10000
+  D 12534 10000
+
+
+Transaction History for Williams Hank By Fund.
+Money Market: $10000
+  D 12530 10000
+
+Prime Money Market: $10000
+  D 12531 10000
+
+Long-Term Bond: $0
+  D 12532 10000
+
+  W 12532 10000
+
+Short-Term Bond: $5000
+  D 12533 10000
+
+  W 12533 5000
+
+500 Index Fund: $10000
+  D 12534 10000
+
+Capital Value Fund: $10000
+  D 12535 10000
+
+Growth Equity Fund: $10000
+  D 12536 10000
+
+Growth Index Fund: $10000
+  D 12537 10000
+
+Value Fund: $10000
+  D 12538 10000
+
+Value Stock Index: $10000
+  D 12539 10000
+
+
+ERROR: Account Number 4356 Cannot Be Found
+ERROR: Account 9876 is already open. Transaction refused.
+
+Processing Done. Final Balances
+Cash Johnny ID: 1001
+ Money Market :$470
+ Prime Money Market :$3042
+ Long-Term Bond :$10442
+ Short-Term Bond :$14540
+ 500 Index Fund :$0
+ Capital Value Fund :$54
+ Growth Equity Fund :$15053
+ Growth Index Fund :$10931
+ Value Fund :$0
+ Value Stock Index :$0
+
+Williams Hank ID: 1253
+ Money Market :$10000
+ Prime Money Market :$10000
+ Long-Term Bond :$0
+ Short-Term Bond :$5000
+ 500 Index Fund :$10000
+ Capital Value Fund :$10000
+ Growth Equity Fund :$10000
+ Growth Index Fund :$10000
+ Value Fund :$10000
+ Value Stock Index :$10000
+
+Nelson Willie ID: 9876
+ Money Market :$0
+ Prime Money Market :$0
+ Long-Term Bond :$0
+ Short-Term Bond :$0
+ 500 Index Fund :$0
+ Capital Value Fund :$0
+ Growth Equity Fund :$0
+ Growth Index Fund :$0
+ Value Fund :$0
+ Value Stock Index :$0
+
+Done
+*** cleaning up, deleting myprogram
+Thu Dec  5 04:25:42 PST 2019
